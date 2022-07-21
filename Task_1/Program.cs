@@ -18,6 +18,7 @@ namespace Task_1
                 Console.Write("Введите целое число Y=");
                 int y = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите код операции: \n\t 1 - сложение \n\t 2 - вычитание \n\t 3 - произведение \n\t 4 - частное");
+                Console.Write("Ваш выбор: ");
                 int z = Convert.ToInt32(Console.ReadLine());
                 switch (z)
                 {
@@ -38,8 +39,10 @@ namespace Task_1
                         }
                       case 4:
                         {
+                            int b = x / y;
                             Console.WriteLine("Результат = {0:f2}", (double) x/y);
-                            break;
+                           break;
+                              
                         }
                         default:
                         {
@@ -48,9 +51,13 @@ namespace Task_1
                         }
                 }
             }
-            catch(Exception ex)
+            catch (DivideByZeroException)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("\n Ошибка! Деление на ноль \n");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\n Ошибка! Входная строка имела неверный формат \n", ex.Message);
             }
             Console.ReadKey();
         }
