@@ -10,40 +10,43 @@ namespace Task_1
     {
         static void Main(string[] args)
         {
-            try
-            {
+           try
+            { 
                 Console.WriteLine("Вас приветсвует калькулятор!");
                 Console.Write("Введите целое число X=");
-                int x = Convert.ToInt32(Console.Read());
+                int x = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Введите целое число Y=");
-                int y = Convert.ToInt32(Console.Read());
-                double result=0;
+                int y = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите код операции: \n\t 1 - сложение \n\t 2 - вычитание \n\t 3 - произведение \n\t 4 - частное");
-                int z = Convert.ToInt32(Console.Read());
+                int z = Convert.ToInt32(Console.ReadLine());
                 switch (z)
                 {
                     case 1:
-                      { 
-                        result = x+y;
+                      {
+                            Console.WriteLine("Результат = {0}", x + y);
                         break;
                       }
                     case 2:
                         {
-                            result = x - y;
+                            Console.WriteLine("Результат = {0}", x-y);
                             break;
                         }
                      case 3:
                         {
-                            result = x * y;
+                            Console.WriteLine("Результат = {0}", x * y);
                             break;
                         }
                       case 4:
                         {
-                            result = x / y;
+                            Console.WriteLine("Результат = {0:f2}", (double) x/y);
+                            break;
+                        }
+                        default:
+                        {
+                            Console.WriteLine("Нет операции с указаным номером");
                             break;
                         }
                 }
-                Console.WriteLine("Результат = {0}", result);
             }
             catch(Exception ex)
             {
@@ -51,5 +54,6 @@ namespace Task_1
             }
             Console.ReadKey();
         }
+
     }
 }
